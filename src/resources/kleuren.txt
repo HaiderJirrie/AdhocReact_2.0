@@ -1,0 +1,4 @@
+(logo) teal: RGB 92, 151, 1,86 #5C97BA
+(Titels) blauw: RGB 3, 62, 153 #33E99
+(Tekst) donker grijs: RGB 85, 85, 85
+(Banners) licht grijs:RGB 242, 242, 242
