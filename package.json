@@ -13,7 +13,7 @@
     "react-reveal": "https://github.com/ahmedsajidh/react-reveal",
     "react-router-dom": "^6.11.1",
     "react-scripts": "^5.0.1",
-    "react-typed": "^1.2.0",
+    "react-typed": "https://github.com/DatableHQ/react-typed",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
