@@ -192,7 +192,7 @@ function Offerte() {
               <div className="flex justify-center items-center lg:w-[500px] mb-8 xl:mb-0">
                 {selectedWerk.length === 0 ? (
                   <>
-                    <h1 className="text-center md:text-end md:ml-14 font-semibold text-slate-700 text-[18px] lg:text-[20px]">
+                    <h1 className="text-center md:text-end xl:ml-14 font-semibold text-slate-700 text-[18px] lg:text-[20px]">
                       U heeft nog geen werkzaamheden geselecteerd.
                     </h1>
                   </>

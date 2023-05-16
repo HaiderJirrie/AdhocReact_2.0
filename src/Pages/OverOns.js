@@ -33,7 +33,6 @@ function OverOns() {
         <h1 className="pt-24 font-bold text-[24px] md:text-[28px] lg:text-[32px] text-center text-adhocBlauw">
           Maak kennis met ons team
         </h1>
-      </Fade>
       <div className="pb-10">
         <Persoon
           pic={Ali}
@@ -94,6 +93,7 @@ function OverOns() {
           }
         />
       </div>
+      </Fade>
     </div>
   );
 }

@@ -1,10 +1,8 @@
 import { FaLinkedin } from "react-icons/fa";
-import Fade from "react-reveal/Fade";
 
 function Persoon(props) {
   return (
     <>
-      <Fade bottom duration="1500">
         <div className="lg:flex gap-10 bg-white shadow-lg p-10 rounded-xl w-fit mx-4 md:mx-auto mt-10 md:hover:scale-105 transition ease-in-out duration-500">
           <div>
             <img
@@ -28,7 +26,6 @@ function Persoon(props) {
             <p>{props.text}</p>
           </div>
         </div>
-      </Fade>
     </>
   );
 }

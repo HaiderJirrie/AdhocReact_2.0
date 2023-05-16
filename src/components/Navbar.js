@@ -50,7 +50,7 @@ function Navbar() {
         <div
           className={
             !nav
-              ? "fixed left-0 top-0 w-[60%] h-full bg-gray-50 ease-in-out duration-700 drop-shadow-md"
+              ? "fixed left-0 top-0 w-[60%] h-full bg-gray-50 transition-all ease-in-out duration-700 drop-shadow-md"
               : "fixed left-[-100%]"
           }
         >
@@ -65,17 +65,17 @@ function Navbar() {
                 Services
               </li>
             </Link>
-            <Link to="over">
+            <Link to="/over">
               <li className="p-4 border-b font-semibold text-[18px]">
                 Over ons
               </li>
             </Link>
-            <Link to="contact">
+            <Link to="/contact">
               <li className="p-4 border-b font-semibold text-[18px]">
                 Contact
               </li>
             </Link>
-            <Link tp="offerte">
+            <Link to="/offerte">
               <li className="p-4 font-semibold text-[18px]">Offerte</li>
             </Link>
           </ul>
