@@ -5,7 +5,7 @@ import Persoon from "../components/Persoon";
 
 function OverOns() {
   return (
-    <div className="bg-wave bg-cover">
+    <div className="bg-wave bg-cover min-h-[1666px]">
       <Fade>
         <h1 className="py-4 font-bold text-[30px] md:text-[32px] lg:text-[36px] text-center text-transparent bg-clip-text bg-gradient-to-l from-adhocDonkerBlauw to-adhocBlauw">
           Over ons

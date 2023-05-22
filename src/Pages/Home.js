@@ -4,6 +4,7 @@ import Contact from "../components/Contact";
 import Sponsors from "../components/Sponsors";
 
 function Home() {
+  
   return (
     <>
       <Hero />

@@ -10,7 +10,6 @@ function Navbar() {
     setNav(!nav);
   };
 
-
   return (
     <div className="sticky bg-white md:bg-opacity-75 md:backdrop-blur-xl top-0 flex justify-between items-center h-24 px-4 md:px-18 lg:px-20 z-10">
       <Link to="/">
@@ -47,39 +46,39 @@ function Navbar() {
         <div onClick={handleNav}>
           {!nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
         </div>
-        <div
-          className={
-            !nav
-              ? "fixed left-0 top-0 w-[60%] h-full bg-gray-50 transition-all ease-in-out duration-700 drop-shadow-md"
-              : "fixed left-[-100%]"
-          }
-        >
-          <ul className="px-4 pt-16 text-center">
-            <Link to="/">
-              <li className="pb-4 px-4 text-adhocBlauw font-bold text-[28px]">
-                Ad Hoc
-              </li>
-            </Link>
-            <Link to="/services">
-              <li className="p-4 border-b font-semibold text-[18px]">
-                Services
-              </li>
-            </Link>
-            <Link to="/over">
-              <li className="p-4 border-b font-semibold text-[18px]">
-                Over ons
-              </li>
-            </Link>
-            <Link to="/contact">
-              <li className="p-4 border-b font-semibold text-[18px]">
-                Contact
-              </li>
-            </Link>
-            <Link to="/offerte">
-              <li className="p-4 font-semibold text-[18px]">Offerte</li>
-            </Link>
-          </ul>
-        </div>
+          <div
+            className={
+              !nav
+                ? "fixed left-0 top-0 w-[60%] h-full bg-gray-50 drop-shadow-md"
+                : "fixed left-[-100%]"
+            }
+          >
+            <ul className="px-4 pt-16 text-center">
+              <Link to="/">
+                <li className="pb-4 px-4 text-adhocBlauw font-bold text-[28px]">
+                  Ad Hoc
+                </li>
+              </Link>
+              <Link to="/services">
+                <li className="p-4 border-b font-semibold text-[18px]">
+                  Services
+                </li>
+              </Link>
+              <Link to="/over">
+                <li className="p-4 border-b font-semibold text-[18px]">
+                  Over ons
+                </li>
+              </Link>
+              <Link to="/contact">
+                <li className="p-4 border-b font-semibold text-[18px]">
+                  Contact
+                </li>
+              </Link>
+              <Link to="/offerte">
+                <li className="p-4 font-semibold text-[18px]">Offerte</li>
+              </Link>
+            </ul>
+          </div>
       </div>
     </div>
   );

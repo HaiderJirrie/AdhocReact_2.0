@@ -4,9 +4,11 @@ import { HiPhone } from "react-icons/hi";
 import { HiMail } from "react-icons/hi";
 
 function Contact(props) {
-  return (
-    <div className="bg-cover bg-center px-4 md:flex md:justify-center pb-24 lg:gap-20">
-      <Fade bottom>
+  const width = window.innerWidth;
+
+  const getContent = () => {
+    return (
+      <div className="md:flex md:justify-center lg:gap-20">
         <div>
           <MessageForm
             title={props.title}
@@ -34,7 +36,17 @@ function Contact(props) {
             </h1>
           </div>
         </div>
-      </Fade>
+      </div>
+    );
+  };
+
+  return (
+    <div className="px-4 pb-24">
+      {width > 764  || props.fadeSlide === true ? (
+          <Fade bottom>{getContent()}</Fade>
+        ) : (
+          getContent()
+        )}
     </div>
   );
 }

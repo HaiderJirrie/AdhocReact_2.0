@@ -122,13 +122,13 @@ function Offerte() {
       </Fade>
 
       <Fade bottom duration={1500}>
-        <div className="w-fit mx-4 md:mx-auto justify-evenly xl:grid xl:grid-cols-2 gap-10">
+        <div className="w-fit mx-auto xl:grid xl:grid-cols-2 gap-10">
           {/* Contact gegevens */}
-          <div className="p-20 gap-8 xl:col-span-1 rounded-xl shadow-xl bg-white">
+          <div className="py-10 sm:py-20 px-20 gap-8 xl:col-span-1 rounded-xl shadow-lg sm:shadow-xl bg-white">
             <h1 className="text-center font-bold text-slate-700 text-[24px] lg:text-[30px]">
               Contact gegevens
             </h1>
-            <div className="md:flex mt-8 items-center justify-center gap-16">
+            <div className="md:flex sm:mt-8 items-center justify-center gap-16">
               <div className="text-center">
                 <div className="md:pb-8 py-4">
                   <label className="font-semibold text-[18px] lg:text-[20px]">
@@ -231,7 +231,7 @@ function Offerte() {
           </div>
 
           {/* Werkzaamheden */}
-          <div className="mt-10 xl:mt-0 p-20 xl:col-span-1 rounded-xl shadow-xl bg-white">
+          <div className="my-4 sm:my-10 xl:my-0 py-10 sm:py-20 px-20 xl:col-span-1 rounded-xl shadow-lg sm:shadow-xl bg-white">
             <h1 className="text-center font-bold text-slate-700 text-[24px] lg:text-[30px]">
               Werkzaamheden
             </h1>
@@ -247,7 +247,7 @@ function Offerte() {
           </div>
 
           {/* Overzicht/verzenden */}
-          <div className="p-20 mb-16 col-span-2 rounded-xl shadow-xl bg-white">
+          <div className="py-10 sm:py-20 px-20 mb-16 col-span-2 rounded-xl shadow-lg sm:shadow-xl bg-white">
             <h1 className="text-center font-bold text-slate-700 text-[24px] lg:text-[30px]">
               Overzicht
             </h1>
@@ -289,7 +289,7 @@ function Offerte() {
                     </label>
                   </div>
                   <button
-                    className=" px-8 py-2 text-[18px] md:text-[20px] font-semibold text-white rounded-[100px] max-w-fit mx-auto bg-gradient-to-br from-adhocBlauw  via-adhocBlauw200  to-adhocDonkerBlauw bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all ease-in-out duration-500 md:hover:-translate-y-1"
+                    className="mt-2 px-8 py-2 text-[18px] md:text-[20px] font-semibold text-white rounded-[100px] max-w-fit mx-auto bg-gradient-to-br from-adhocBlauw  via-adhocBlauw200  to-adhocDonkerBlauw bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all ease-in-out duration-500 md:hover:-translate-y-1"
                     onClick={handleFormSubmit}
                   >
                     Verzenden

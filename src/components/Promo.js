@@ -6,10 +6,11 @@ import ServiceCard from "./ServiceCard";
 import Fade from "react-reveal/Fade";
 
 function Promo() {
-  return (
-    <div className="text-center mb-20">
-      <div className="w-full rounded-b justify-center rounded-xl bg-adhocBlauw py-16 px-4">
-        <Fade bottom>
+  const width = window.innerWidth;
+
+  const getContent = () => {
+    return (
+      <>
           <h1 className="text-white font-bold text-[24px] lg:text-[30px] pb-4">
             Onze services
           </h1>
@@ -34,7 +35,17 @@ function Promo() {
               van werkprocessen."
           />
         </div>
-        </Fade>
+      </>
+    );
+  };
+  return (
+    <div className="text-center mb-20">
+      <div className="w-full rounded-b justify-center rounded-xl bg-adhocBlauw py-16 px-4">
+        {width > 764 ? (
+          <Fade bottom>{getContent()}</Fade>
+        ) : (
+          getContent()
+        )}
       </div>
     </div>
   );

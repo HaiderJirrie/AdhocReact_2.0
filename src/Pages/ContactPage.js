@@ -14,7 +14,7 @@ function ContactPage() {
         </p>
       </Fade>
       <div>
-        <Contact title="Stuur een bericht" animation={true} />
+        <Contact title="Stuur een bericht" animation={true} fadeSlide={true} />
       </div>
     </div>
   );
