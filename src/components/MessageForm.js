@@ -60,19 +60,19 @@ function MessageForm(props) {
               Overzicht
             </h1>
             <div className="text-center">
-              <label className="font-semibold text-[18px] pr-2 lg:text-[20px]">
+              <label className="font-semibold text-[18px] lg:text-[20px]">
                 E-mailadres
               </label>
               <p>{email}</p>
 
               <div className="py-6">
-                <label className="font-semibold text-[18px] pr-2 lg:text-[20px]">
+                <label className="font-semibold text-[18px] lg:text-[20px]">
                   Naam
                 </label>
                 <p>{voornaam + " " + achternaam}</p>
               </div>
 
-              <label className="font-semibold text-[18px] pr-2 lg:text-[20px]">
+              <label className="font-semibold text-[18px] lg:text-[20px]">
                 Bericht
               </label>
               <textarea

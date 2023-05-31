@@ -161,6 +161,7 @@ function Offerte() {
                   ) : null}
                   <input
                     className="block mx-auto md:mx-0 p-2 mt-1 border-2 rounded-lg border-gray-400"
+                    id="company"
                     type="text"
                     placeholder="Uw Bedrijfsnaam"
                     value={bedrijfsnaam}
@@ -190,7 +191,7 @@ function Offerte() {
                 </label>
                 <input
                   className="block mx-auto md:mx-0 p-2 mt-1 mb-4 border-2 rounded-lg border-gray-400"
-                  id="tussenvoegsel"
+                  id="infix"
                   type="text"
                   placeholder="Uw tussenvoegsel"
                   value={tussenvoegsel}
