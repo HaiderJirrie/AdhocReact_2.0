@@ -11,7 +11,7 @@ function OverOns() {
           Over ons
         </h1>
         <div className="flex justify-center">
-          <div className="px-4 md:px-16 lg:w-5/12 text-center text-[16px] md:text-[18px] lg:text-[18px] leading-8">
+          <div className="px-4 md:px-16 lg:sm:w-5/12 text-center text-[16px] md:text-[18px] leading-8">
             <p>
               Bij Ad Hoc IT Services richten wij ons op de wensen van de klant.
               Zoals de naam doet vermoeden leveren wij hulp adhoc maar bestaan

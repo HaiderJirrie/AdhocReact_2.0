@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Fade from "react-reveal/Fade";
+import OfferteSucces from "../components/OfferteSucces";
 
 function Offerte() {
   const [selectedWerk, setSelectedWerk] = useState([]);
@@ -20,15 +21,25 @@ function Offerte() {
   const [werkzaamhedenError, setWerkzaamhedenError] = useState(false);
   const [privacyError, setPrivacyError] = useState(false);
 
+  const [formError, setFormError] = useState(false);
   const [formFilled, setFormFilled] = useState(false);
 
+  const werkzaamheden = [
+    "Systeembeheer",
+    "Werkplekbeheer",
+    "Cybersecurity advies",
+    "App development",
+    "Web development",
+    "Anders",
+  ];
+
   function handleFormSubmit() {
+    let errorValue = false;
+
     const setError = (errorState, value) => {
       errorState(value);
       errorValue = true;
     };
-
-    let errorValue = false;
 
     !bedrijfsnaam.length > 0
       ? setError(setBedrijfsnaamError, true)
@@ -49,19 +60,12 @@ function Offerte() {
     !privacyAccepted ? setError(setPrivacyError, true) : setPrivacyError(false);
 
     if (!errorValue) {
-      console.log("success!");
       setFormFilled(true);
+      window.scrollTo(0, 0);
+    } else {
+      setFormError(true);
     }
   }
-
-  const werkzaamheden = [
-    "Systeembeheer",
-    "Werkplekbeheer",
-    "Cybersecurity advies",
-    "App development",
-    "Web development",
-    "Anders",
-  ];
 
   function displayWerkzaamheden() {
     return werkzaamheden.map((werkzaamheid, index) => (
@@ -107,10 +111,28 @@ function Offerte() {
     setSelectedWerk(copy);
   }
 
+  function getName() {
+    return (
+      voornaam +
+      " " +
+      (tussenvoegsel.length > 0 ? (tussenvoegsel + " ") : "") +
+      achternaam
+    );
+  }
+
   if (formFilled) {
-    return (<>
-      <h1>bedankt! :D:D</h1>
-    </>)
+    return (
+      <>
+        <OfferteSucces
+          company={bedrijfsnaam}
+          name={getName()}
+          email={email}
+          phone={telefoonnummer}
+          selected={selectedWerk}
+          message={omschrijving}
+        />
+      </>
+    );
   }
 
   return (
@@ -135,7 +157,7 @@ function Offerte() {
                     Bedrijfsnaam*
                   </label>
                   {bedrijfsnaamError ? (
-                    <p className="text-red-500"> verplicht veld </p>
+                    <p className="text-red-500"> Verplicht veld </p>
                   ) : null}
                   <input
                     className="block mx-auto md:mx-0 p-2 mt-1 border-2 rounded-lg border-gray-400"
@@ -151,7 +173,7 @@ function Offerte() {
                   Voornaam*
                 </label>
                 {voornaamError ? (
-                  <p className="text-red-500"> verplicht veld </p>
+                  <p className="text-red-500"> Verplicht veld </p>
                 ) : null}
                 <input
                   className="block mx-auto md:mx-0 p-2 mt-1 mb-4 border-2 rounded-lg border-gray-400"
@@ -180,7 +202,7 @@ function Offerte() {
                   Achternaam*
                 </label>
                 {achternaamError ? (
-                  <p className="text-red-500"> verplicht veld </p>
+                  <p className="text-red-500"> Verplicht veld </p>
                 ) : null}
                 <input
                   className="block mx-auto md:mx-0 p-2 mt-1 border-2 rounded-lg border-gray-400"
@@ -198,7 +220,7 @@ function Offerte() {
                   E-mailadres*
                 </label>
                 {emailError ? (
-                  <p className="text-red-500"> verplicht veld </p>
+                  <p className="text-red-500"> Verplicht veld </p>
                 ) : null}
                 <input
                   className="block mx-auto md:mx-0 p-2 mt-1 mb-4 border-2 rounded-lg border-gray-400"
@@ -214,7 +236,7 @@ function Offerte() {
                   Telefoonnummer*
                 </label>
                 {telefoonnummerError ? (
-                  <p className="text-red-500"> verplicht veld </p>
+                  <p className="text-red-500"> Verplicht veld </p>
                 ) : null}
                 <input
                   className="block mx-auto md:mx-0 p-2 mt-1 border-2 rounded-lg border-gray-400"
@@ -239,7 +261,7 @@ function Offerte() {
               Naar welke werkzaamheden bent u opzoek?*
             </h1>
             {werkzaamhedenError ? (
-              <p className="text-red-500 text-center"> verplicht veld </p>
+              <p className="text-red-500 text-center"> Verplicht veld </p>
             ) : null}
             <div className="mt-8 xl:pt-8 w-fit mx-auto gap-10">
               {displayWerkzaamheden()}
@@ -247,7 +269,7 @@ function Offerte() {
           </div>
 
           {/* Overzicht/verzenden */}
-          <div className="py-10 sm:py-20 px-20 mb-16 col-span-2 rounded-xl shadow-lg sm:shadow-xl bg-white">
+          <div className="py-10 sm:py-20 px-20 pb-16 col-span-2 rounded-xl shadow-lg sm:shadow-xl bg-white mb-16">
             <h1 className="text-center font-bold text-slate-700 text-[24px] lg:text-[30px]">
               Overzicht
             </h1>
@@ -264,10 +286,10 @@ function Offerte() {
                     setOmchrijving(e.target.value);
                   }}
                 />
-                <div className="flex flex-col">
+                <div className="flex flex-col mt-8">
                   <div className="py-2">
                     {privacyError ? (
-                      <p className="text-red-500"> verplicht veld </p>
+                      <p className="text-red-500"> Verplicht veld </p>
                     ) : null}
                     <input
                       type="checkbox"
@@ -288,6 +310,12 @@ function Offerte() {
                       *
                     </label>
                   </div>
+                  {formError ? (
+                    <p className="text-red-500">
+                      {" "}
+                      Niet alle velden zijn ingevuld{" "}
+                    </p>
+                  ) : null}
                   <button
                     className="mt-2 px-8 py-2 text-[18px] md:text-[20px] font-semibold text-white rounded-[100px] max-w-fit mx-auto bg-gradient-to-br from-adhocBlauw  via-adhocBlauw200  to-adhocDonkerBlauw bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all ease-in-out duration-500 md:hover:-translate-y-1"
                     onClick={handleFormSubmit}
@@ -296,7 +324,7 @@ function Offerte() {
                   </button>
                 </div>
               </div>
-              <div className="flex justify-center items-center lg:w-[500px] mb-8 xl:mb-0">
+              <div className="flex justify-center items-center lg:w-[500px] mb-8 xl:mb-20">
                 {selectedWerk.length === 0 ? (
                   <>
                     <h1 className="text-center md:text-end xl:ml-14 font-semibold text-slate-700 text-[18px] lg:text-[20px]">

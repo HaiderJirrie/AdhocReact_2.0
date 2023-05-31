@@ -24,6 +24,7 @@ module.exports = {
         'blob': "url('./resources/home/blob.svg')",
         'blob2': "url('./resources/home/blob2.svg')",
         'wave': "url('./resources/home/wave.svg')",
+        'wave2': "url('./resources/home/wave2.svg')",
       }
     },
   },
