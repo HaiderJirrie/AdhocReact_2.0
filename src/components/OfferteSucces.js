@@ -10,19 +10,12 @@ function OfferteSucces(props) {
       <div className="flex justify-center py-8 text-center mx-4 md:mx-0">
         <Fade duration="1500">
           <div className="bg-white md:w-fit pt-14 pb-16 px-4 md:px-8 lg:px-10 xl:px-16 rounded-lg shadow-lg ">
-            <h1 className="text-center font-bold text-slate-700 text-[24px] lg:text-[30px] pt-8">
+            <h1 className="text-center font-bold text-slate-700 text-[24px] lg:text-[30px] py-8">
               Bedankt, uw offerte is verstuurd
             </h1>
-            <div className="flex justify-center">
-              <h1 className="text-center font-bold text-adhocBlauw text-[18px] lg:text-[24px] pt-4 pb-6">
-                Bekijk uw overzicht
-              </h1>
-            </div>
 
             <div>
-              
-              <div className="md:flex items-baseline justify-center gap-28">
-                
+              <div className="md:flex items-baseline justify-center gap-28 md:mb-8">
                 <div>
                   <div className="">
                     <label className="font-semibold text-[18px] lg:text-[20px]">
@@ -59,7 +52,6 @@ function OfferteSucces(props) {
                     <p>{displaySelectedWork()}</p>
                   </div>
                 </div>
-
               </div>
 
               <label className="font-semibold text-[18px] lg:text-[20px]">
@@ -69,9 +61,7 @@ function OfferteSucces(props) {
                 className="resize-none h-52 mt-1 block p-2 border-2 rounded-lg border-gray-400 w-full"
                 readOnly
               >
-                {props.message.length > 0
-                  ? props.message
-                  : "Geen omschrijving."}
+                {props.message.length > 0 ? props.message : "Geen omschrijving."}
               </textarea>
             </div>
             <div className="flex justify-center">

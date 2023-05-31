@@ -1,7 +1,13 @@
+import InfoSoftwareDevelopment from "../components/InfoSoftwareDevelopment";
+import InfoServicedesk from "../components/infoServicedesk";
+import InfoAdvice from "../components/InfoAdvice";
+
 function Services() {
   return (
     <>
-      <h1>Services</h1>
+      <InfoSoftwareDevelopment />
+      <InfoServicedesk reverse={true} />
+      <InfoAdvice />
     </>
   );
 }

@@ -11,15 +11,16 @@ function Promo() {
   const getContent = () => {
     return (
       <>
-          <h1 className="text-white font-bold text-[24px] lg:text-[30px] pb-4">
-            Onze services
-          </h1>
+        <h1 className="text-white font-bold text-[24px] lg:text-[30px] pb-4">
+          Onze services
+        </h1>
         <div className="md:flex items-center md:justify-center gap-8">
           <ServiceCard
             pic={webapp}
             title="Software development"
             description="Wij ontwikkelen zakelijke websites en Apps voor onze klanten,
                 bekijk de mogelijkheden!"
+            link="/services/software-ontwikkelen"
           />
           <ServiceCard
             pic={servicedesk}
@@ -27,12 +28,14 @@ function Promo() {
             description="Wij ondersteunen onze klanten bij het gebruik van hardware en
               software door middel van het detacheren van Skilled Service Desk
               medewerkers en systeembeheerders."
+            link="/services/ict-servicedesk"
           />
           <ServiceCard
             pic={advies}
             title="Professioneel advies"
             description="Wij adviseren onder andere in cybersecurity en het digitaliseren
               van werkprocessen."
+            link="/services/professioneel-advies"
           />
         </div>
       </>
@@ -41,11 +44,7 @@ function Promo() {
   return (
     <div className="text-center mb-20">
       <div className="w-full rounded-b justify-center rounded-xl bg-adhocBlauw py-16 px-4">
-        {width > 764 ? (
-          <Fade bottom>{getContent()}</Fade>
-        ) : (
-          getContent()
-        )}
+        {width > 764 ? <Fade bottom>{getContent()}</Fade> : getContent()}
       </div>
     </div>
   );
