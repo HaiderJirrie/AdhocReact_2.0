@@ -41,25 +41,16 @@ function Offerte() {
       errorValue = true;
     };
 
-    !bedrijfsnaam.length > 0
-      ? setError(setBedrijfsnaamError, true)
-      : setBedrijfsnaamError(false);
-    !voornaam.length > 0
-      ? setError(setVoornaamError, true)
-      : setVoornaamError(false);
-    !achternaam.length > 0
-      ? setError(setAchternaamError, true)
-      : setAchternaamError(false);
+    !bedrijfsnaam.length > 0 ? setError(setBedrijfsnaamError, true) : setBedrijfsnaamError(false);
+    !voornaam.length > 0 ? setError(setVoornaamError, true) : setVoornaamError(false);
+    !achternaam.length > 0 ? setError(setAchternaamError, true) : setAchternaamError(false);
     !email.length > 0 ? setError(setEmailError, true) : setEmailError(false);
-    !telefoonnummer.length > 0
-      ? setError(setTelefoonnummerError, true)
-      : setTelefoonnummerError(false);
-    selectedWerk.length === 0
-      ? setError(setWerkzaamhedenError, true)
-      : setWerkzaamhedenError(false);
+    !telefoonnummer.length > 0 ? setError(setTelefoonnummerError, true) : setTelefoonnummerError(false);
+    selectedWerk.length === 0 ? setError(setWerkzaamhedenError, true) : setWerkzaamhedenError(false);
     !privacyAccepted ? setError(setPrivacyError, true) : setPrivacyError(false);
 
     if (!errorValue) {
+      sendOfferte()
       setFormFilled(true);
       window.scrollTo(0, 0);
     } else {
@@ -113,12 +104,44 @@ function Offerte() {
 
   function getName() {
     return (
-      voornaam +
-      " " +
-      (tussenvoegsel.length > 0 ? (tussenvoegsel + " ") : "") +
-      achternaam
+      voornaam + " " + (tussenvoegsel.length > 0 ? tussenvoegsel + " " : "") +  achternaam
     );
   }
+
+  function getData() {
+    return {
+      subject: "Offerte van " + bedrijfsnaam,
+      body:
+        "<h1>Offerte</h1><p>Bedrijf: <span>" +
+        bedrijfsnaam +
+        "<span><p/><p>Naam: <span>" +
+        getName() +
+        "<span><p/> <p>E-mail: <span>" +
+        email +
+        "<span><p/><p>Tel.nummer: <span>" +
+        telefoonnummer +
+        "<span><p/><p>Services: <span>" +
+        selectedWerk +
+        "<span><p/><p>Beschrijving: <span>" +
+        omschrijving +
+        "<span><p/>",
+    };
+  }
+
+  const sendOfferte = () => {
+    let data = getData();
+
+    fetch("https://adhocmailer.herokuapp.com/Email", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    console.log("gelukt")
+  };
 
   if (formFilled) {
     return (
@@ -139,7 +162,7 @@ function Offerte() {
     <div>
       <Fade>
         <h1 className="py-4 font-bold text-[30px] md:text-[32px] lg:text-[36px] text-center text-transparent bg-clip-text bg-gradient-to-l from-adhocDonkerBlauw to-adhocBlauw">
-          Offerte
+          Offerte aanvragen
         </h1>
       </Fade>
 

@@ -14,7 +14,7 @@ function InfoServicedesk(props) {
               }
             >
               <img
-                className="w-[150px] xl:w-[250px] mx-auto"
+                className="w-[125px] xl:w-[200px] mx-auto"
                 src={servicedesk}
                 alt=""
               />
@@ -25,7 +25,7 @@ function InfoServicedesk(props) {
 
             <div
               className={
-                props.reverse !== true ? "xl:col-span-1 xl:w-4/6" : "xl:ml-60 xl:col-span-1 xl:w-4/6"
+                props.reverse !== true ? "xl:col-span-1 xl:w-4/6" : "xl:ml-48 xl:col-span-1 xl:w-4/6"
               }
             >
               <div className="py-6">

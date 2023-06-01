@@ -10,7 +10,7 @@ function InfoSoftwareDevelopment() {
           <div className="xl:grid lg:grid-cols-2 xl:py-8">
             <div className="xl:col-span-1 mx-auto mt-28">
               <img
-                className="w-[150px] xl:w-[250px] mx-auto"
+                className="w-[125px] xl:w-[200px] mx-auto"
                 src={webapp}
                 alt=""
               />

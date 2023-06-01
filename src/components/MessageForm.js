@@ -34,22 +34,43 @@ function MessageForm(props) {
 
     let errorValue = false;
 
-    !voornaam.length > 0
-      ? setError(setVoornaamError, true)
-      : setVoornaamError(false);
-    !achternaam.length > 0
-      ? setError(setAchternaamError, true)
-      : setAchternaamError(false);
+    !voornaam.length > 0 ? setError(setVoornaamError, true) : setVoornaamError(false);
+    !achternaam.length > 0 ? setError(setAchternaamError, true) : setAchternaamError(false);
     !email.length > 0 ? setError(setEmailError, true) : setEmailError(false);
-    !bericht.length > 0
-      ? setError(setBerichtError, true)
-      : setBerichtError(false);
+    !bericht.length > 0 ? setError(setBerichtError, true) : setBerichtError(false);
 
     if (!errorValue) {
-      console.log("success!");
+      sendOfferte();
       setFormFilled(true);
     }
   }
+
+  function getData() {
+    return {
+      subject: "Bericht van " + voornaam + " " + achternaam,
+      body:
+        "<h1>Bericht</h1> <p>Naam: <span>" +
+        voornaam + " " + achternaam +
+        "<span><p/> <p>E-mail: <span>" +
+        email +
+        "<span><p/><p>Bericht: <span>" +
+        bericht +
+        "<span><p/>",
+    };
+  }
+
+  const sendOfferte = () => {
+    let data = getData();
+
+    fetch("https://adhocmailer.herokuapp.com/Email", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  };
 
   if (formFilled) {
     return (
@@ -160,6 +181,7 @@ function MessageForm(props) {
           />
         </div>
       </div>
+
       <div className="pt-8 text-center">
         <label className="font-semibold text-[18px] lg:text-[20px]">
           Bericht*

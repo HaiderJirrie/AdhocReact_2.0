@@ -101,13 +101,7 @@ function OverOns() {
         </div>
       </Fade>
 
-      {width > 764 ? (
-        <Fade bottom duration="2000">
-          {getPeople()}
-        </Fade>
-      ) : (
-        getPeople()
-      )}
+      {width > 764 ? <Fade bottom duration="2000"> {getPeople()} </Fade> : getPeople() }
     </div>
   );
 }

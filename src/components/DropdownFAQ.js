@@ -13,7 +13,7 @@ function DropdownFAQ(props) {
     <div>
       <div className="my-4">
         <button
-          className="flex items-center justify-between w-full p-8 text-white font-bold text-[18px] lg:text-[22px] rounded-lg text-left bg-gradient-to-br from-adhocBlauw via-adhocBlauw200 to-adhocBlauw200 bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all ease-in-out duration-300"
+          className="flex items-center justify-between w-full p-8 text-white font-bold text-[16px] lg:text-[20px] rounded-lg text-left bg-gradient-to-br from-adhocBlauw via-adhocBlauw200 to-adhocBlauw200 bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all ease-in-out duration-300"
           onClick={handleDropdown}
         >
           {props.title}

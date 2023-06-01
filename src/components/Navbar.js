@@ -48,9 +48,7 @@ function Navbar() {
         </div>
           <div
             className={
-              !nav
-                ? "fixed left-0 top-0 w-[60%] h-full bg-gray-50 drop-shadow-md"
-                : "fixed left-[-100%]"
+              !nav ? "fixed left-0 top-0 w-[60%] h-full bg-gray-50 drop-shadow-md" : "fixed left-[-100%]"
             }
           >
             <ul className="px-4 pt-16 text-center">

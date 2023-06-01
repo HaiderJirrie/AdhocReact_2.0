@@ -5,11 +5,11 @@ function InfoAdvice() {
   return (
     <>
       <Fade>
-        <div className="sm:mx-16 xl:mx-0">
+        <div >
           <div className="mx-4 xl:grid lg:grid-cols-2 xl:py-8">
             <div className="xl:col-span-1 mx-auto mt-28">
               <img
-                className="w-[150px] xl:w-[250px] mx-auto"
+                className="w-[125px] xl:w-[200px] mx-auto"
                 src={advies}
                 alt=""
               />
@@ -32,7 +32,7 @@ function InfoAdvice() {
           <div className="bg-adhocBlauw w-full py-16 mt-16 rounded-t-xl">
             <div className="w-fit sm:w-4/6 mx-auto">
               <div className="mx-4 py-8 bg-white rounded-xl shadow-xl p-4 md:px-8 md:py-16 md:hover:scale-105 transition ease-in-out duration-500">
-                <h1 className="text-center text-slate-700 font-bold text-[24px] lg:text-[30px]">
+                <h1 className="text-center text-slate-700 font-bold text-[20px] lg:text-[24px]">
                   Cybersecurity advies
                 </h1>
                 <p className="px-4 md:px-16 text-[16px] md:text-[18px] leading-8 pt-4">
@@ -52,7 +52,7 @@ function InfoAdvice() {
               </div>
 
               <div className="mx-4 py-8 mt-16 bg-white rounded-xl shadow-xl p-4 md:px-8 md:py-16 md:hover:scale-105 transition ease-in-out duration-500">
-                <h1 className="text-center text-slate-700 font-bold text-[24px] lg:text-[30px]">
+                <h1 className="text-center text-slate-700 font-bold text-[20px] lg:text-[24px]">
                   Digitaliseren en Moderniseren van werkprocessen
                 </h1>
                 <p className="px-4 md:px-16 text-[16px] md:text-[18px] leading-8 pt-4">
